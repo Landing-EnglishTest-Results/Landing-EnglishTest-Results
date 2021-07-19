@@ -273,12 +273,15 @@ a {
 .table__wrapper {
   background: #ededed;
   width: 100%;
-  padding-top: 30px;
-  padding-left: 38px;
+  padding: 30px 0 20px 38px;
 }
 
 .table__results {
   counter-reset: myCount;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: calc(((39px) * 100 + 30px) / 3);
 }
 
 .table__results-item {
@@ -347,6 +350,12 @@ a {
   margin-left: 15px;
 }
 
+@media screen and (max-width: 960px) {
+  .table__results {
+    max-height: calc(((39px) * 100 + 30px) / 2);
+  }
+}
+
 @media screen and (max-width: 756px) {
   .info {
     grid-column-gap: 20px;
@@ -401,6 +410,10 @@ a {
 
   .description__btn-sign-up {
     padding: 16px 40px;
+  }
+
+  .table__results {
+    max-height: calc(((39px) * 100 + 30px) / 1);
   }
 
   .footer {
@@ -492,5 +505,11 @@ a {
 
   .table__header {
     margin-left: 75px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .table__header {
+    margin-left: 5px;
   }
 }
